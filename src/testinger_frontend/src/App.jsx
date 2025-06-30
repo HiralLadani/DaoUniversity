@@ -1,31 +1,40 @@
-import { useState } from 'react';
-import { testinger_backend } from 'declarations/testinger_backend';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 
-function App() {
-  const [greeting, setGreeting] = useState('');
+import Home from "./pages/Home";
+import Courses from "./pages/Courses";
+import Certificate from "./pages/Certificate";
+import DAO from "./pages/DAO";
+import Profile from "./pages/Profile";
+import NotFound from "./pages/NotFound";
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    const name = event.target.elements.name.value;
-    testinger_backend.greet(name).then((greeting) => {
-      setGreeting(greeting);
-    });
-    return false;
-  }
+import Navbar from "./components/Navbar";
+
+const AnimatedRoutes = () => {
+  const location = useLocation();
 
   return (
-    <main>
-      <img src="/logo2.svg" alt="DFINITY logo" />
-      <br />
-      <br />
-      <form action="#" onSubmit={handleSubmit}>
-        <label htmlFor="name">Enter your name: &nbsp;</label>
-        <input id="name" alt="Name" type="text" />
-        <button type="submit">Click Me!</button>
-      </form>
-      <section id="greeting">{greeting}</section>
-    </main>
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Home />} />
+        <Route path="/courses" element={<Courses />} />
+        <Route path="/certificates" element={<Certificate />} />
+        <Route path="/dao" element={<DAO />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </AnimatePresence>
   );
-}
+};
+
+const App = () => {
+  return (
+    <Router>
+      <Navbar />
+      <AnimatedRoutes />
+    </Router>
+  );
+};
 
 export default App;
