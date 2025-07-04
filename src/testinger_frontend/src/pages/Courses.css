@@ -1,0 +1,115 @@
+.courses-page {
+  padding: 60px 80px;
+  background: #f7f9fc;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.courses-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.courses-header h1 {
+  font-size: 2.8rem;
+  color: #1b1b2f;
+  margin-bottom: 12px;
+}
+
+.courses-header p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.course-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-4px);
+}
+
+.course-card h2 {
+  font-size: 1.4rem;
+  color: #2345cc;
+  margin-bottom: 12px;
+}
+
+.course-card .description {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 18px;
+  flex: 1;
+}
+
+.course-card .meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 16px;
+}
+
+.course-card .detail {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.status {
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.status.open {
+  color: #116611;
+  background-color: #d6f5d6;
+}
+
+.status.closed {
+  color: #aa0000;
+  background-color: #f9d6d6;
+}
+
+.outcomes {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 12px 0 16px;
+  color: #444;
+  font-size: 0.9rem;
+}
+
+.enroll-btn {
+  background-color: #2345cc;
+  color: #fff;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.enroll-btn:hover {
+  background-color: #1a35a8;
+}
+
+.enroll-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
