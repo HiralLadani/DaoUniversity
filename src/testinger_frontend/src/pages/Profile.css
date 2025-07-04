@@ -1,27 +1,62 @@
+.profile-container {
+  max-width: 700px;
+  margin: 40px auto;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.role-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.role-toggle button {
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.role-toggle button.active {
+  background: #2345cc;
+  color: #fff;
+  border-color: #2345cc;
+}
+
+.role-toggle button:hover:not(.active) {
+  background: #e0e0e0;
+}
+
 .profile-card {
-  max-width: 500px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background: #ffffff;
+  background: #fff;
+  padding: 30px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  font-family: sans-serif;
 }
 
 .profile-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: #2c3e50;
+  font-size: 1.8rem;
+  color: #2345cc;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-card p {
+  font-size: 1rem;
+  margin: 8px 0;
+  color: #333;
 }
 
 .subjects-list {
-  list-style-type: disc;
-  margin-left: 1.5rem;
-  margin-bottom: 1rem;
+  padding-left: 20px;
+  margin: 8px 0 16px;
 }
 
-p {
-  margin: 0.5rem 0;
-  color: #333;
+.subjects-list li {
+  margin-bottom: 4px;
+  color: #555;
 }
