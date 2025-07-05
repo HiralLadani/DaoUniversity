@@ -8,7 +8,7 @@ import Certificate from "./pages/Certificate";
 import DAO from "./pages/DAO";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
-import LoginSignup from "./pages/LoginSignup"; // 👈 import your LoginSignup page with the completion of it 
+//import LoginSignup from "./pages/LoginSignup.jsx"; // 👈 import your LoginSignup page with the completion of it 
 
 import Navbar from "./components/Navbar";
 
@@ -58,15 +58,26 @@ const AnimatedRoutes = () => {
           path="/profile"
           element={
             <>
-              <Navbar />
+              <Navbar />              
               <Profile />
             </>
           }
         />
-        <Route path="/auth" element={<LoginSignup />} />
+        <Route
+          path="/auth"
+          element={
+            <>
+              <Navbar />              
+              <Login />
+            </>
+          }
+        />
+       {/* // <Route path="/auth" element={<LoginSignup.jsx />} /> */}
 {/*         Login Section needs to be completed ... */}
         <Route path="*" element={<NotFound />} />
+        
       </Routes>
+      
     </AnimatePresence>
   );
 };
